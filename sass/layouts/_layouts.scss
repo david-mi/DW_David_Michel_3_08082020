@@ -1,0 +1,159 @@
+
+header{
+    
+  img{
+      height: 60px;
+      padding: 40px;
+      margin: 0px auto 50px auto;
+      @media screen and (max-width: $mobile){
+      height: auto;
+      padding: 15px 0px;
+      }
+  }
+}
+
+.main_container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.explore{
+    text-align: center;
+    background: ($clr-cards-bg);
+    padding: 0px 20px 50px 20px;
+    flex: 1 1 400px;
+
+
+    .location{
+        background-color: $clr-location;
+        padding: 10px 0px;
+        margin: 0px -20px;
+
+        .location__icon{
+            margin-right: 10px;
+        }
+
+        .location__text{
+            font-weight: 500;
+        }
+    }
+    
+    .explore__title{
+        font-weight: 800;
+        margin-top: 40px;
+    }
+
+    .explore__button{
+        font-weight: 400;
+        color: white;
+        background: linear-gradient($clr-secondary, $clr-primary);
+        width: fit-content;
+        padding: 15px 20px;
+        border-radius: 30px;
+        margin: 30px auto 0px auto;
+
+        a{
+            color: white;
+        }
+    }
+}  
+
+.functioning{
+    flex: 1 1 400px;  
+    margin: 0px 0px 0px 40px;
+    position: relative;
+    @media screen and (max-width: $wrap){
+        // Pour centrer la vignette en tenant compte du décalage avec le chiffre
+        margin: 0px 20px 0px calc(20px + 12.25px); 
+        
+    }
+
+    &__title{
+        text-align: center;
+        @media screen and (max-width: $mobile){
+            text-align: left;
+        }
+    }
+
+    &__element{
+        background: $clr-cards-bg;
+        padding: 25px 30px;
+        border-radius: 20px;
+        box-shadow: 0px 3px 6px  #818181b2;
+        @include flex-2axis-center;
+        &.eat{
+            background: #f5edff;
+        }
+
+        &--number{
+            background-color: $clr-primary;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            @include flex-2axis-center;
+            position: absolute;
+            left: calc(0px - 12.5px);
+        }
+
+        &--icon{
+           margin-right: 20px;
+           color: $clr-grey-icon;
+           @media screen and (max-width: $mobile){
+                position: absolute;
+                left: 8%;
+           }
+        }
+    }
+}
+
+.restroom__container{
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .restroom__title {
+        flex: 1 1 100%;
+    }
+}
+
+footer{
+    color: white;
+    background-color: $clr-footer-bg;
+    padding: 20px;
+    margin: 0px -20px;
+    @media screen and (max-width: $mobile){
+        margin: 0px;
+    }
+
+    .footer__title{
+        font-weight: 500;
+        margin-top: 0px;
+        text-align: center;
+        font-size: 1.5rem;
+        @media screen and (max-width: $mobile){
+         text-align: left; 
+         font-size: 1.2rem;  
+        }
+    }
+
+    ul{
+        display: flex;
+        justify-content: space-around;
+        @media screen and (max-width: $mobile){
+        flex-direction: column;
+        }
+    }
+    
+    li{
+        margin-bottom: 10px;
+        .icon{
+            width: 15px;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+        a {
+            color: white;
+        }
+    }
+}
