@@ -6,6 +6,7 @@ body{
     height: 100vh;
     margin: 0px auto;
     max-width: 1400px;
+    min-width: 315px;
     padding: 0px 20px;
     @media screen and (max-width: $mobile){
         padding: 0px;
