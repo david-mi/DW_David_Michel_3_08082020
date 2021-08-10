@@ -1,3 +1,7 @@
+.menu__body{
+    max-width: 800px;
+}
+
 .restaurant__picture--container{
     max-width: 800px;
     margin: auto;
@@ -121,4 +125,8 @@
         color: white;
         overflow: hidden;
     }
+}
+
+.menu__footer{
+    margin: 0px;
 }

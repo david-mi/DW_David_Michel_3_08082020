@@ -282,6 +282,10 @@ footer li a {
   color: white;
 }
 
+.menu__body {
+  max-width: 800px;
+}
+
 .restaurant__picture--container {
   max-width: 800px;
   margin: auto;
@@ -405,5 +409,9 @@ footer li a {
   font-size: 1.5rem;
   color: white;
   overflow: hidden;
+}
+
+.menu__footer {
+  margin: 0px;
 }
 /*# sourceMappingURL=style.css.map */
