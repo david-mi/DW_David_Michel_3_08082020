@@ -3,7 +3,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
+    
     margin: 0px auto;
     max-width: 1400px;
     min-width: 315px;
@@ -31,7 +31,7 @@ h3{
     font-size: 1rem;
 }
 
-span{
+span, strong{
     display: inline-block;
 }
 

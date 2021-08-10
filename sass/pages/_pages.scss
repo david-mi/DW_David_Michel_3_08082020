@@ -9,7 +9,7 @@
 }
 
 .menu{
-    margin: auto;
+    margin: 0px auto -50px;
     box-sizing: border-box;
     padding: 15px;
     max-width: 800px;
@@ -29,7 +29,6 @@
             font-size: 1.5rem;
             color: white;
             margin-left: 30px;
-            
             -webkit-text-stroke:2px black;
             &:hover {
                 transition: all 200ms linear;
@@ -58,28 +57,68 @@
 }
 
 .menu__item{
+    color: black;
     max-height: 73px;
     background-color: white;
-    padding: 15px 15px 15px 10px;
+    padding: 15px 0px 15px 15px;
     margin-bottom: 15px;
     border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    align-items: flex-end;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas: 
+    " name name icon"
+    " desc price icon";
+    
 
-    &--name{
-        font-weight: 800;
+    &:hover .menu__item--icon-container{
+        transition: all 400ms linear;
+        width: 73px;
+    }
+
+    &:hover .menu__item--icon{
+        transition: all 400ms linear;
+        transform: rotate(360deg);
     }
 
     &--name{
+        grid-area: name;
+        font-weight: 800;
         margin: 0px 0px 5px 0px;
-        flex: 1 1 100%;
+        overflow: hidden;
+        white-space:nowrap;
+        text-overflow: ellipsis;
     }
 
     &--description{
-        color: $clr-grey-icon;
+        grid-area: desc;
+        max-height: 19px;
+        overflow: hidden;
+        white-space:nowrap;
+        text-overflow: ellipsis;
     }
 
     &--price{
-        margin-left: auto;
+        grid-area: price;
+        padding-inline: 15px;
+        justify-self: flex-end;
+    }
+    
+    &--icon-container{
+        @include flex-2axis-center;
+        grid-area: icon;
+        margin-block: -15px;
+        border-radius: 0px 20px 20px 0px;
+        background-color: $clr-tertiary;
+        justify-self: flex-end;
+        align-self: stretch;
+        width: 0px;  
+    }
+
+    &--icon{
+        font-size: 1.5rem;
+        color: white;
+        overflow: hidden;
     }
 }
