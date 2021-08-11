@@ -2,6 +2,26 @@
     max-width: 800px;
 }
 
+.header-menu{
+    
+    position: relative;
+  
+    &__icon--link{
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__icon{
+        font-size: 2rem;
+        color: black;
+        @media screen and (max-width: $mobile){
+            font-size: 1.3rem;
+        }
+    }
+}
+
 .restaurant__picture--container{
     max-width: 800px;
     margin: auto;

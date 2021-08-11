@@ -5,6 +5,7 @@ body {
   margin: 0px auto;
   max-width: 1400px;
   min-width: 315px;
+  position: relative;
   padding: 0px 20px;
 }
 
@@ -41,18 +42,24 @@ img {
 }
 
 header .header__logo {
-  margin-block: 50px;
+  padding-block: 50px;
 }
 
 @media screen and (max-width: 650px) {
   header .header__logo {
-    margin-block: 20px;
+    padding-block: 20px;
   }
 }
 
 header img {
-  height: fit-content;
+  height: 50px;
   margin: auto;
+}
+
+@media screen and (max-width: 650px) {
+  header img {
+    height: 30px;
+  }
 }
 
 .main_container {
@@ -284,6 +291,28 @@ footer li a {
 
 .menu__body {
   max-width: 800px;
+}
+
+.header-menu {
+  position: relative;
+}
+
+.header-menu__icon--link {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-menu__icon {
+  font-size: 2rem;
+  color: black;
+}
+
+@media screen and (max-width: 650px) {
+  .header-menu__icon {
+    font-size: 1.3rem;
+  }
 }
 
 .restaurant__picture--container {

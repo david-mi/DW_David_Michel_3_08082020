@@ -1,15 +1,24 @@
+// .loader{
+//     position: absolute;
+//     inset: 0px;
+//     background-color: red;
+//     z-index: 99;
+// }
 
 header{
     
   .header__logo{
-    margin-block: 50px;
+    padding-block: 50px;
     @media screen and (max-width: $mobile){
-        margin-block: 20px;
+        padding-block: 20px;
     }
   }
   img{
-      height: fit-content;
+      height: 50px;
       margin: auto;
+      @media screen and (max-width: $mobile){
+          height: 30px;
+      }
   }
 }
 
