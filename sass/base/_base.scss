@@ -3,14 +3,19 @@
 
 
 
-body{
+body, html{
     font-family: 'Roboto', sans-serif;
-    
     margin: 0px auto;
+    position: relative;
+    
+    
+}
+
+.full-container {
     max-width: 1400px;
     min-width: 315px;
-    position: relative;
     padding: 0px 20px;
+    margin: 0px auto;
     @media screen and (max-width: $tablet){
         padding: 0px;
     }

@@ -1,8 +1,19 @@
+
+
 // .loader{
 //     position: absolute;
 //     inset: 0px;
-//     background-color: red;
+//     background-color: white;
 //     z-index: 99;
+//     display: grid;
+//     place-items: center;
+//     position: fixed;
+
+//     &__item{
+//         width: 10%;
+//         aspect-ratio: 1;
+//         background: linear-gradient($clr-secondary, $clr-primary);
+//     }
 // }
 
 header{
