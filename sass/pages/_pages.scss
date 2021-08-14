@@ -1,5 +1,5 @@
 .menu__body{
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .header-menu{
@@ -23,7 +23,6 @@
 }
 
 .restaurant__picture--container{
-    max-width: 800px;
     margin: auto;
     img {
         width: 100%;
@@ -32,12 +31,15 @@
     }
 }
 
+// ANIMATIONS OUVERTURE PAGE
+
 @keyframes opacity {
-    from { 
+    0% { 
         opacity: 1; 
      }
 
-    to {
+    99.9% { z-index: 10; }
+    100% {
         opacity: 0;
         z-index: -9999;
     } 
@@ -55,9 +57,11 @@
     } 
 }
 
-.container-anim::before { animation: opacity 400ms linear forwards}
-.menu-anim {
-    animation: up-opacity 400ms ease-in backwards; 
+.container-anim::before{ animation: opacity 1.6s linear forwards}
+.menu__footer-anim { animation: opacity 1.6s linear forwards reverse }
+.menu-anim, .menu__order-button{
+    animation: up-opacity 400ms ease-in-out backwards; 
+
     &__anim-1 { animation-delay: 200ms }
     &__anim-2 { animation-delay: 300ms }
     &__anim-3 { animation-delay: 400ms }
@@ -69,13 +73,18 @@
     &__anim-9 { animation-delay: 1000ms }
     &__anim-10 { animation-delay: 1100ms }
     &__anim-11 { animation-delay: 1200ms }
+    &__anim-12 { animation-delay: 1300ms }
+    &__anim-13 { animation-delay: 1400ms }
+    &__anim-14 { animation-delay: 1500ms }
+    &__anim-15 { animation-delay: 1600ms }
 }
+
+/////////////////////
 
 .menu{
     margin: 0px auto -50px;
     box-sizing: border-box;
     padding: 15px;
-    max-width: 800px;
     display: flex;
     flex-direction: column;
     background: $clr-cards-bg;
@@ -100,7 +109,7 @@
 
         &--icon {
             font-size: 1.5rem;
-            color: white;
+            color: $clr-cards-bg;
             margin-left: 30px;
             -webkit-text-stroke:2px black;
             &:hover {
@@ -110,48 +119,7 @@
         }
     }
 
-    &__order-button{
-        text-align: center;
-        line-height: 49px;
-        font-weight: 400;
-        color: white;
-        background: linear-gradient($clr-secondary, $clr-primary);
-        width: 190px;
-        height: 49px;
-        border-radius: 30px;
-        margin: 30px auto 40px auto;
-        position: relative;
-        transition: all 300ms ease-out;
-        z-index: 1;
-
-        &:hover{
-            box-shadow: 0px 0px 10px $clr-box-shadow-darker;
-            &::before{
-                opacity: 1;
-            }
-        }
-
-        &::before{
-            position: absolute;
-            content: "";
-            border-radius: 30px;
-            inset: 0px;
-            background: linear-gradient(90deg, #b579ff, #FF79DA);
-            z-index: -1;
-            opacity: 0;
-            transition: all 300ms ease-out;
-            z-index: -1;
-        }
-
-    a{
-        display: block;
-        color: white;
-        border-radius: 30px;
-        width: 100%;
-        height: 100%;
-    }
-        
-    }
+   
 }   
 
 .menu__order{
@@ -181,6 +149,7 @@
     padding: 15px 0px 15px 15px;
     margin-bottom: 15px;
     border-radius: 20px;
+    box-shadow: 0px 0px 8px lighten($clr-box-shadow, 30%);
     display: grid;
     align-items: flex-end;
     grid-template-rows: 1fr 1fr ;
@@ -240,6 +209,49 @@
     }
 }
 
+.menu__order-button{
+    text-align: center;
+    line-height: 49px;
+    font-weight: 400;
+    color: white;
+    background: linear-gradient($clr-secondary, $clr-primary);
+    width: 190px;
+    height: 49px;
+    border-radius: 30px;
+    margin: 30px auto 40px auto;
+    position: relative;
+    transition: all 300ms ease-out;
+    z-index: 1;
+
+    &:hover{
+        box-shadow: 0px 0px 10px $clr-box-shadow-darker;
+        &::before{
+            opacity: 1;
+        }
+    }
+
+    &::before{
+        position: absolute;
+        content: "";
+        border-radius: 30px;
+        inset: 0px;
+        background: linear-gradient(90deg, #b579ff, #FF79DA);
+        z-index: -1;
+        opacity: 0;
+        transition: all 300ms ease-out;
+        z-index: -1;
+    }
+
+    &--link{
+    display: block;
+    color: white;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    }
+}
+
 .menu__footer{
-    margin: 0px;
+    box-sizing: border-box;
+    margin: 0px auto;
 }
