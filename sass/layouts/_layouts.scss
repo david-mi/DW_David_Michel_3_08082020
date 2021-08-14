@@ -147,7 +147,7 @@ header{
 .functioning{
     flex: 1 1 400px; 
     margin: 0px 0px 0px 40px;
-    @media screen and (max-width: $mobile){
+    @media screen and (max-width: $tablet){
         // Pour centrer la vignette en tenant compte du décalage avec le chiffre
         margin: 0px 20px 0px calc(20px + 12.25px); 
         

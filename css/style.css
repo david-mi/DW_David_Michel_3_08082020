@@ -193,7 +193,7 @@ header img {
   margin: 0px 0px 0px 40px;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1024px) {
   .functioning {
     margin: 0px 20px 0px calc(20px + 12.25px);
   }
