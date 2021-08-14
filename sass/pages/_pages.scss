@@ -32,6 +32,45 @@
     }
 }
 
+@keyframes opacity {
+    from { 
+        opacity: 1; 
+     }
+
+    to {
+        opacity: 0;
+        z-index: -9999;
+    } 
+}
+
+@keyframes up-opacity {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px);
+     }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    } 
+}
+
+.container-anim::before { animation: opacity 400ms linear forwards}
+.menu-anim {
+    animation: up-opacity 400ms ease-in backwards; 
+    &__anim-1 { animation-delay: 200ms }
+    &__anim-2 { animation-delay: 300ms }
+    &__anim-3 { animation-delay: 400ms }
+    &__anim-4 { animation-delay: 500ms }
+    &__anim-5 { animation-delay: 600ms }
+    &__anim-6 { animation-delay: 700ms }
+    &__anim-7 { animation-delay: 800ms }
+    &__anim-8 { animation-delay: 900ms }
+    &__anim-9 { animation-delay: 1000ms }
+    &__anim-10 { animation-delay: 1100ms }
+    &__anim-11 { animation-delay: 1200ms }
+}
+
 .menu{
     margin: 0px auto -50px;
     box-sizing: border-box;
@@ -43,6 +82,16 @@
     position: relative;
     border-radius: 50px 50px 0px 0px;
     top: -50px;
+
+    &::before{
+        content: "";
+        position: absolute;
+        inset: 0px;
+        border-radius: 50px 50px 0px 0px;
+        background-color: white;
+        opacity: 0;
+        z-index: 10;
+    }
 
     &__title{
         font-family: 'Shrikhand', cursive;
@@ -106,6 +155,7 @@
 }   
 
 .menu__order{
+
     &--title{
         font-weight: 500;
         color: $clr-grey-icon;
@@ -124,6 +174,7 @@
 }
 
 .menu__item{
+    
     color: black;
     max-height: 73px;
     background-color: white;
@@ -137,7 +188,6 @@
     grid-template-areas: 
     " name name icon"
     " desc price icon";
-    
 
     &:hover .menu__item--icon-container{
         transition: all 400ms linear;

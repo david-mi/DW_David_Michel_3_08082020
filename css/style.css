@@ -4,6 +4,7 @@ body, html {
   font-family: 'Roboto', sans-serif;
   margin: 0px auto;
   position: relative;
+  background-color: white;
 }
 
 .full-container {
@@ -43,6 +44,52 @@ span, strong {
 
 img {
   display: block;
+}
+
+@keyframes loader {
+  70% {
+    opacity: 1;
+  }
+  99.99% {
+    z-index: 9999;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    z-index: -9999;
+  }
+}
+
+@keyframes loader-spinner {
+  0% {
+    transform: rotate(0deg) translateX(0px);
+  }
+  80% {
+    transform: rotate(720deg);
+  }
+  100% {
+    transform: translateX(140vh) rotate(720deg);
+  }
+}
+
+.loader {
+  opacity: 1;
+  position: fixed;
+  animation: loader 4s linear forwards;
+  inset: 0px;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+}
+
+.loader::before {
+  animation: loader-spinner 3s cubic-bezier(0.76, 0.19, 0.43, 1.09) forwards;
+  content: "";
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 1;
+  background: linear-gradient(#FF79DA, #9356DC);
 }
 
 header .header__logo {
@@ -414,6 +461,79 @@ footer li a {
   object-fit: cover;
 }
 
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -9999;
+  }
+}
+
+@keyframes up-opacity {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.container-anim::before {
+  animation: opacity 400ms linear forwards;
+}
+
+.menu-anim {
+  animation: up-opacity 400ms ease-in backwards;
+}
+
+.menu-anim__anim-1 {
+  animation-delay: 200ms;
+}
+
+.menu-anim__anim-2 {
+  animation-delay: 300ms;
+}
+
+.menu-anim__anim-3 {
+  animation-delay: 400ms;
+}
+
+.menu-anim__anim-4 {
+  animation-delay: 500ms;
+}
+
+.menu-anim__anim-5 {
+  animation-delay: 600ms;
+}
+
+.menu-anim__anim-6 {
+  animation-delay: 700ms;
+}
+
+.menu-anim__anim-7 {
+  animation-delay: 800ms;
+}
+
+.menu-anim__anim-8 {
+  animation-delay: 900ms;
+}
+
+.menu-anim__anim-9 {
+  animation-delay: 1000ms;
+}
+
+.menu-anim__anim-10 {
+  animation-delay: 1100ms;
+}
+
+.menu-anim__anim-11 {
+  animation-delay: 1200ms;
+}
+
 .menu {
   margin: 0px auto -50px;
   box-sizing: border-box;
@@ -425,6 +545,16 @@ footer li a {
   position: relative;
   border-radius: 50px 50px 0px 0px;
   top: -50px;
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  border-radius: 50px 50px 0px 0px;
+  background-color: white;
+  opacity: 0;
+  z-index: 10;
 }
 
 .menu__title {
