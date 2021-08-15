@@ -1,0 +1,40 @@
+/////// ICONES COEURS /////////
+ 
+.heart-icons__container { 
+    position: absolute;
+    top: 50%;
+    height: 24px;
+    width: 30px;
+    transform: translateY(-50%);
+
+    &:hover .icon-full{
+        transform: scale(1);
+    }
+
+    &:hover .icon-empty {
+        color:$clr-primary;
+    }
+
+    .heart-icon {
+        position: absolute;
+        inset: 0px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .icon-empty {
+        transition: color 200ms 100ms  linear;
+        z-index: 10;
+    }
+
+    .icon-full{
+        transition: 300ms ease-in-out;
+        font-size: 1.5rem;
+        color: $clr-primary;
+        transform-origin: bottom;
+        transform: scale(0);
+        z-index: 1;
+    }
+}
+
+///////////////////////////

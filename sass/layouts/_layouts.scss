@@ -1,6 +1,5 @@
 @keyframes loader {
     
-    
     70% {opacity: 1;}
     99.99%{ z-index: 9999; opacity: 0; }
     100% { opacity: 0; 
@@ -114,7 +113,7 @@ header{
         
 
         &:hover{
-            box-shadow: 0px 0px 10px $clr-box-shadow-darker;
+            box-shadow: 0px 0px 10px darken($clr-box-shadow, 20%);
             &::before{
                 opacity: 1;
             }
@@ -177,7 +176,7 @@ header{
         &:hover{
             
             box-shadow: 0px 3px 10px $clr-box-shadow;
-            background-color: #ffffff;
+            background-color: lighten($clr-cards-bg, 100%);
         }
 
         &--number{
@@ -185,6 +184,9 @@ header{
             width: 25px;
             height: 25px;
             border-radius: 50%;
+            color: white;
+            font-weight: 400;
+            font-size: 0.9rem;
             @include flex-2axis-center;
             position: absolute;
             left: calc(0px - 12.5px);
@@ -260,6 +262,10 @@ header{
         &:hover .item__picture{
             filter: brightness(1.1);
         }
+
+       
+        
+
     }
 
     .item__link
@@ -285,7 +291,7 @@ header{
         max-height: 200px;
         object-fit: cover;
         transition: filter 200ms linear;
-
+     
         
     }
 
@@ -293,29 +299,21 @@ header{
         
         padding: 15px;
         position: relative;
-    
+        
+        .heart-icons__container {
+            right: 20px;
+        }
 
         &--title {
             margin: 0px 0px 6px 0px;
             font-weight: 900;
             font-size: 1.1rem;
         }
+        
 
-        &--icon {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 20px;
-            font-size: 1.5rem;
-            color: white;
-            -webkit-text-stroke:2px black;
-            z-index: 10;
-            &:hover {
-                transition: all 200ms linear;
-                color: $clr-primary;
-            }
-        }
+      
     }
+    
 }
 
 

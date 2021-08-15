@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 body, html {
   font-family: 'Roboto', sans-serif;
+  height: 100vh;
   margin: 0px auto;
   position: relative;
   background-color: white;
@@ -44,6 +45,43 @@ span, strong {
 
 img {
   display: block;
+}
+
+.heart-icons__container {
+  position: absolute;
+  top: 50%;
+  height: 24px;
+  width: 30px;
+  transform: translateY(-50%);
+}
+
+.heart-icons__container:hover .icon-full {
+  transform: scale(1);
+}
+
+.heart-icons__container:hover .icon-empty {
+  color: #9356DC;
+}
+
+.heart-icons__container .heart-icon {
+  position: absolute;
+  inset: 0px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.heart-icons__container .icon-empty {
+  transition: color 200ms 100ms  linear;
+  z-index: 10;
+}
+
+.heart-icons__container .icon-full {
+  transition: 300ms ease-in-out;
+  font-size: 1.5rem;
+  color: #9356DC;
+  transform-origin: bottom;
+  transform: scale(0);
+  z-index: 1;
 }
 
 @keyframes loader {
@@ -161,7 +199,7 @@ header img {
 }
 
 .explore .explore__button:hover {
-  box-shadow: 0px 0px 10px #8d8c8c;
+  box-shadow: 0px 0px 10px #727272;
 }
 
 .explore .explore__button:hover::before {
@@ -230,7 +268,7 @@ header img {
 
 .functioning__element:hover {
   box-shadow: 0px 3px 10px #a5a5a5;
-  background-color: #ffffff;
+  background-color: white;
 }
 
 .functioning__element--number {
@@ -238,6 +276,9 @@ header img {
   width: 25px;
   height: 25px;
   border-radius: 50%;
+  color: white;
+  font-weight: 400;
+  font-size: 0.9rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -350,26 +391,14 @@ header img {
   position: relative;
 }
 
+.restroom__container .item__info-container .heart-icons__container {
+  right: 20px;
+}
+
 .restroom__container .item__info-container--title {
   margin: 0px 0px 6px 0px;
   font-weight: 900;
   font-size: 1.1rem;
-}
-
-.restroom__container .item__info-container--icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
-  font-size: 1.5rem;
-  color: white;
-  -webkit-text-stroke: 2px black;
-  z-index: 10;
-}
-
-.restroom__container .item__info-container--icon:hover {
-  transition: all 200ms linear;
-  color: #9356DC;
 }
 
 footer {
@@ -496,63 +525,63 @@ footer li a {
   animation: up-opacity 400ms ease-in-out backwards;
 }
 
-.menu-anim__anim-1, .menu__order-button__anim-1 {
+.menu-anim__anim-1 {
   animation-delay: 200ms;
 }
 
-.menu-anim__anim-2, .menu__order-button__anim-2 {
+.menu-anim__anim-2 {
   animation-delay: 300ms;
 }
 
-.menu-anim__anim-3, .menu__order-button__anim-3 {
+.menu-anim__anim-3 {
   animation-delay: 400ms;
 }
 
-.menu-anim__anim-4, .menu__order-button__anim-4 {
+.menu-anim__anim-4 {
   animation-delay: 500ms;
 }
 
-.menu-anim__anim-5, .menu__order-button__anim-5 {
+.menu-anim__anim-5 {
   animation-delay: 600ms;
 }
 
-.menu-anim__anim-6, .menu__order-button__anim-6 {
+.menu-anim__anim-6 {
   animation-delay: 700ms;
 }
 
-.menu-anim__anim-7, .menu__order-button__anim-7 {
+.menu-anim__anim-7 {
   animation-delay: 800ms;
 }
 
-.menu-anim__anim-8, .menu__order-button__anim-8 {
+.menu-anim__anim-8 {
   animation-delay: 900ms;
 }
 
-.menu-anim__anim-9, .menu__order-button__anim-9 {
+.menu-anim__anim-9 {
   animation-delay: 1000ms;
 }
 
-.menu-anim__anim-10, .menu__order-button__anim-10 {
+.menu-anim__anim-10 {
   animation-delay: 1100ms;
 }
 
-.menu-anim__anim-11, .menu__order-button__anim-11 {
+.menu-anim__anim-11 {
   animation-delay: 1200ms;
 }
 
-.menu-anim__anim-12, .menu__order-button__anim-12 {
+.menu-anim__anim-12 {
   animation-delay: 1300ms;
 }
 
-.menu-anim__anim-13, .menu__order-button__anim-13 {
+.menu-anim__anim-13 {
   animation-delay: 1400ms;
 }
 
-.menu-anim__anim-14, .menu__order-button__anim-14 {
+.menu-anim__anim-14 {
   animation-delay: 1500ms;
 }
 
-.menu-anim__anim-15, .menu__order-button__anim-15 {
+.menu-anim__anim-15 {
   animation-delay: 1600ms;
 }
 
@@ -580,20 +609,21 @@ footer li a {
 
 .menu__title {
   font-family: 'Shrikhand', cursive;
-  font-size: 1.7rem;
+  font-size: 2rem;
+  margin-left: 10px;
+  position: relative;
   text-align: center;
 }
 
-.menu__title--icon {
-  font-size: 1.5rem;
-  color: #F6F6F6;
-  margin-left: 30px;
-  -webkit-text-stroke: 2px black;
+.menu__title .heart-icons__container {
+  right: 10px;
 }
 
-.menu__title--icon:hover {
-  transition: all 200ms linear;
-  color: #9356DC;
+@media screen and (max-width: 650px) {
+  .menu__title {
+    font-size: 1.7rem;
+    text-align: left;
+  }
 }
 
 .menu__order--title {
@@ -696,7 +726,7 @@ footer li a {
 }
 
 .menu__order-button:hover {
-  box-shadow: 0px 0px 10px #8d8c8c;
+  box-shadow: 0px 0px 10px #727272;
 }
 
 .menu__order-button:hover::before {
