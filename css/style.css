@@ -186,12 +186,20 @@ header img {
 }
 
 .explore .location__icon {
-  margin-right: 5px;
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.explore .location form {
+  position: relative;
 }
 
 .explore .location input {
+  text-align: center;
+  width: 140px;
   line-height: 30px;
-  padding: 2px 0px 0px 10px;
   font-size: 1rem;
   border: 0px;
   border-radius: 5px;
