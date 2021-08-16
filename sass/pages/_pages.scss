@@ -162,7 +162,7 @@
     &:hover .menu__item--icon{
         transition: all 400ms ease-in-out;
         transform: rotate(360deg);
-        width: 73px;
+        
     }
 
     &--name{
@@ -191,6 +191,7 @@
     &--icon-container{
         @include flex-2axis-center;
         grid-area: icon;
+        box-sizing: border-box;
         transition: all 400ms ease-in-out;
         margin-block: -15px;
         border-radius: 0px 20px 20px 0px;
@@ -199,14 +200,13 @@
         align-self: stretch;
         width: 0px;
         
+        
     }
 
     
 
     &--icon{
-        transition: width 400ms ease-in-out;
         text-align: center;
-        width: 0px;
         font-size: 1.5rem;
         color: white;
         overflow: hidden;
