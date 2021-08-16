@@ -96,15 +96,29 @@ img {
   z-index: 1;
 }
 
+@keyframes loader {
+  70% {
+    opacity: 1;
+  }
+  99.99% {
+    z-index: 9999;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    z-index: -9999;
+  }
+}
+
 @keyframes loader-spinner {
   0% {
     transform: rotate(0deg) translateX(0px);
   }
   80% {
-    transform: rotate(720deg);
+    transform: rotate(720deg) skewX(0deg);
   }
   100% {
-    transform: translateX(140vh) rotate(720deg);
+    transform: translateX(140vh) rotate(720deg) skewX(50deg);
   }
 }
 
@@ -113,30 +127,30 @@ img {
     transform: scale(0) rotate(0deg);
   }
   10% {
-    transform: scale(1) rotate(200deg);
+    transform: scale(1) rotate(72deg);
   }
   70% {
-    transform: scale(1) rotate(800deg);
+    transform: scale(1) rotate(504deg);
   }
-  80% {
-    transform: scale(0) rotate(1000deg);
+  85% {
+    transform: scale(0) rotate(720deg);
   }
   100% {
-    transform: scale(0) rotate(0deg);
+    transform: scale(0) rotate(720deg);
   }
 }
 
 @keyframes loader__main-circle {
   0% {
-    transform: scale(0) rotate(1000deg);
+    transform: scale(0) rotate(720deg);
   }
   10% {
-    transform: scale(1) rotate(800deg);
+    transform: scale(1) rotate(504deg);
   }
   70% {
-    transform: scale(1) rotate(200deg);
+    transform: scale(1) rotate(72deg);
   }
-  80% {
+  85% {
     transform: scale(0) rotate(0deg);
   }
   100% {
@@ -201,7 +215,7 @@ img {
 
 .loader__circle-1 {
   width: 30%;
-  animation: loader__main-circle 3s linear both;
+  animation: loader__main-circle 3s cubic-bezier(0.86, 0.12, 0.2, 0.74) both;
 }
 
 .loader__circle-1::before {
@@ -220,7 +234,7 @@ img {
 .loader__circle-2 {
   width: 40%;
   background-color: blue;
-  animation: loader__main-circle-reverse 3s linear both;
+  animation: loader__main-circle-reverse 3s cubic-bezier(0.86, 0.12, 0.2, 0.74) both;
 }
 
 .loader__circle-2::before {
