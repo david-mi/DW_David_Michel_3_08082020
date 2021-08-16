@@ -12,25 +12,39 @@
     }
 
     &:hover .icon-empty {
-        color:$clr-primary;
+        background: linear-gradient($clr-secondary, $clr-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     .heart-icon {
+
+        color: transparent;
         position: absolute;
         inset: 0px;
         font-size: 1.5rem;
         text-align: center;
+
+      &:hover{
+          cursor: pointer;
+      }
+
     }
 
     .icon-empty {
-        transition: color 200ms 100ms  linear;
+        transition: all 200ms linear;
         z-index: 10;
+        background: black;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     .icon-full{
         transition: 300ms ease-in-out;
         font-size: 1.5rem;
-        color: $clr-primary;
+        background: linear-gradient($clr-secondary, $clr-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         transform-origin: bottom;
         transform: scale(0);
         z-index: 1;

@@ -9,15 +9,18 @@
     </head>
     <body>
         <div class="full-container">
-        <div class="loader">
-        </div>
+        <!-- <div class="loader">
+        </div> -->
         <header>
             <div class="header__logo"><img src="images/logo/ohmyfood@2x.svg" alt="logo ohmyfood"></div>
         </header>
         <main class="main_container">
             <article class="explore">
                 <div class="location">
-                    <i class="location__icon fas fa-map-marker-alt"></i><span class="location__text">Paris, Belleville</span>
+                    <i class="location__icon fas fa-map-marker-alt"></i>
+                    <form method="post" action="traitement.php">
+                        <input type="search" class="location__form" id="search" name="search" placeholder="Paris, Belleville"/> 
+                    </form>
                 </div>
                 <h2 class="explore__title">Réservez le menu qui vous convient</h2>
                 <p class="explore__description">
@@ -92,9 +95,9 @@
         <footer>
             <h3 class="footer__title">ohmyfood</h3>
             <ul>
-                <li><i class="icon fas fa-utensils"></i><a href="#"><span>Proposer un restaurant</span></a></li>
-                <li><i class="icon fas fa-hands-helping"></i><a href="#"><span>Devenir Partenaire</span></a></li>
-                <li><a href="#"><span>Mentions légales</span></a></li>
+                <li><i class="icon fas fa-utensils"></i><a href="#/"><span>Proposer un restaurant</span></a></li>
+                <li><i class="icon fas fa-hands-helping"></i><a href="#/"><span>Devenir Partenaire</span></a></li>
+                <li><a href="#/"><span>Mentions légales</span></a></li>
                 <li><a href="mailto:contact@ohmyfood.com"><span>Contact</span></a></li>
             </ul>
         </footer>
