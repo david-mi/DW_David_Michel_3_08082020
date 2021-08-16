@@ -686,6 +686,7 @@ footer li a {
 
 .menu__item {
   color: black;
+  overflow: hidden;
   max-height: 73px;
   background-color: white;
   padding: 15px 0px 15px 15px;
@@ -700,13 +701,13 @@ footer li a {
 }
 
 .menu__item:hover .menu__item--icon-container {
-  transition: all 400ms linear;
   width: 73px;
 }
 
 .menu__item:hover .menu__item--icon {
-  transition: all 400ms linear;
+  transition: all 400ms ease-in-out;
   transform: rotate(360deg);
+  width: 73px;
 }
 
 .menu__item--name {
@@ -737,6 +738,7 @@ footer li a {
   justify-content: center;
   align-items: center;
   grid-area: icon;
+  transition: all 400ms ease-in-out;
   margin-block: -15px;
   border-radius: 0px 20px 20px 0px;
   background-color: #99E2D0;
@@ -746,6 +748,9 @@ footer li a {
 }
 
 .menu__item--icon {
+  transition: width 400ms ease-in-out;
+  text-align: center;
+  width: 0px;
   font-size: 1.5rem;
   color: white;
   overflow: hidden;
