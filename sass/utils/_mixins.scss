@@ -5,6 +5,10 @@
     align-items: $align;
 }
 
-@mixin clr-gradient-prim-second{
+@mixin clr-gradient-second-prim{
     background: linear-gradient($clr-secondary, $clr-primary);
+}
+
+@mixin clr-gradient-second-prim-hover{
+    background: linear-gradient(90deg, #b579ff, #FF79DA);
 }

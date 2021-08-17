@@ -134,7 +134,7 @@
   animation: loader__circles-color 3s linear both;
   left: 0px;
   width: 3vw;
-  background: linear-gradient(#9356DC, #FF79DA);
+  background: linear-gradient(#FF79DA, #9356DC);
 }
 
 .loader__circle-2 {
@@ -154,7 +154,7 @@
   animation: loader__circles-color 3s linear both reverse;
   right: 0px;
   width: 4vw;
-  background: linear-gradient(#9356DC, #FF79DA);
+  background: linear-gradient(#FF79DA, #9356DC);
 }
 
 body, html {
