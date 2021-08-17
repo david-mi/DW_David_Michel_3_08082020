@@ -1,14 +1,8 @@
-@mixin flex-2axis-center{ 
+@mixin display-flex ($flow: nowrap row, $justify: stretch, $align: stretch) {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin flex-2axis-center__column{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-flow: $flow;
+    justify-content: $justify;
+    align-items: $align;
 }
 
 @mixin clr-gradient-prim-second{
