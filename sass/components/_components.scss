@@ -12,7 +12,7 @@
     }
 
     &:hover .icon-empty{
-        @include clr-gradient-second-prim;
+        @include bg-gradient-second-prim;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -42,7 +42,7 @@
     .icon-full{
         transition: 300ms ease-in-out;
         font-size: 1.5rem;
-        @include clr-gradient-second-prim;
+        @include bg-gradient-second-prim;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;

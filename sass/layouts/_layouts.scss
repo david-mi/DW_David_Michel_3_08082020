@@ -86,7 +86,7 @@ header{
     .explore__button{
         font-weight: 400;
         color: white;
-        @include clr-gradient-second-prim;
+        @include bg-gradient-second-prim;
         line-height: 49px;
         width: 210px;
         height: 49px;
@@ -109,7 +109,7 @@ header{
             content: "";
             border-radius: 30px;
             inset: 0px;
-            @include clr-gradient-second-prim-hover;
+            @include bg-gradient-second-prim-modif;
             z-index: -1;
             opacity: 0;
             transition: all 300ms ease-out;

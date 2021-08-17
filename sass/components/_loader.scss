@@ -137,7 +137,7 @@
         position: absolute;
         width: 10%;
         aspect-ratio: 1;
-        @include clr-gradient-second-prim;
+        @include bg-gradient-second-prim;
     }
 
     .circles {
@@ -177,7 +177,7 @@
             animation: loader__circles-color 3s linear both;
             left: 0px;
             width: 3vw;
-            @include clr-gradient-second-prim;
+            @include bg-gradient-second-prim;
         }
     }
 
@@ -198,7 +198,7 @@
             animation: loader__circles-color 3s linear both reverse;
             right: 0px;
             width: 4vw;
-            @include clr-gradient-second-prim;
+            @include bg-gradient-second-prim;
         }
 
     }
