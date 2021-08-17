@@ -1,0 +1,205 @@
+// LOADER CONTAINER FULLSCREEN
+
+@keyframes loader {
+    
+    70%{
+        opacity: 1;
+    }
+
+    99.99%{ 
+        z-index: 9999; 
+        opacity: 0; 
+    }
+
+    100%{ 
+        opacity: 0; 
+        z-index: -9999; 
+    }
+}
+
+// LOADER SPINNER CARRE
+
+@keyframes loader-spinner {
+ 
+    0%{
+        transform: rotate(0deg)
+                    translateX(0px);
+    }
+   
+    80%{
+        transform: rotate(720deg) 
+                    skewX(0deg); 
+    }
+    
+    100%{
+        transform: translateX(140vh)
+                    rotate(720deg)
+                        skewX(50deg);
+    }
+}
+
+// ROTATION ET SCALE CERCLES INVERSE
+
+@keyframes loader__main-circle-reverse{
+    
+    0% {
+         transform: scale(0) 
+                        rotate(0deg); 
+        }
+
+    10%{ 
+        transform: scale(1)
+                     rotate(72deg);
+    }
+
+    70%{ 
+        transform: scale(1)  
+                    rotate(504deg);
+    }
+
+    85%{
+        transform: scale(0) 
+                    rotate(720deg); 
+    }
+
+    100%{
+        transform: scale(0) 
+                    rotate(720deg);
+    }
+}
+
+// ROTATION ET SCALE CERCLES
+
+@keyframes loader__main-circle{
+    
+    0%{
+         transform: scale(0) 
+                        rotate(720deg) 
+    }
+
+    10%{ 
+        transform: scale(1) 
+                    rotate(504deg)
+    }
+
+    70%{
+        transform: scale(1)  
+                    rotate(72deg)
+    }
+
+    85%{
+        transform: scale(0) 
+                    rotate(0deg); 
+    }
+    100%{
+        transform: scale(0) 
+                    rotate(0deg);
+    }
+}
+
+// CHANGEMENT COULEUR PETITS CERCLES
+
+@keyframes loader__circles-color{
+    
+   0%{
+       opacity: 1;
+   }
+
+   33%{
+       opacity: 0;
+   }
+
+   66%{
+       opacity: 1;
+   }
+
+   99%{
+       opacity: 0;
+   }
+}
+
+///////////////////////////////
+
+.loader{
+    opacity: 1;
+    position: fixed;
+    animation: loader 4s linear forwards;
+    inset: 0px;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    z-index: 9999;
+    
+
+    &::before{
+        animation: loader-spinner 3s cubic-bezier(.76,.19,.43,1.09) forwards;
+        content: "";
+        position: absolute;
+        width: 10%;
+        aspect-ratio: 1;
+        background: linear-gradient($clr-secondary, $clr-primary);
+    }
+
+    .circles {
+        @include display-flex ($align: center);
+        position: absolute;
+        
+        border-radius: 50%;
+        background-color: transparent;
+        aspect-ratio: 1;
+        z-index:-1;
+    
+    }
+
+
+    .loader__circle-1::before, 
+    .loader__circle-1::after,
+    .loader__circle-2::before,
+    .loader__circle-2::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            aspect-ratio: 1;
+    }   
+
+    &__circle-1 {
+        width: 30%;
+        animation: loader__main-circle 3s cubic-bezier(.86,.12,.2,.74) both;
+        
+        
+        &::before {
+            left: 0px;
+            width: 3vw;
+            background-color: $clr-tertiary;
+        }
+
+        &::after {
+            animation: loader__circles-color 3s linear both;
+            left: 0px;
+            width: 3vw;
+            background: linear-gradient($clr-primary, $clr-secondary);
+        }
+    }
+
+    &__circle-2 {
+        width: 40%;
+        background-color: blue;
+        animation: loader__main-circle-reverse 3s cubic-bezier(.86,.12,.2,.74) both; 
+
+        &::before {
+            
+            background-color: rgb(0, 255, 55);
+            right: 0px;
+            width: 4vw;
+            background-color: $clr-tertiary;
+        }
+
+        &::after {
+            animation: loader__circles-color 3s linear both reverse;
+            right: 0px;
+            width: 4vw;
+            background: linear-gradient($clr-primary, $clr-secondary);
+        }
+
+    }
+}

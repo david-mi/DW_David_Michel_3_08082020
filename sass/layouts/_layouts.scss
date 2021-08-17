@@ -1,165 +1,3 @@
-@keyframes loader {
-    
-    70% {opacity: 1;}
-    99.99%{ z-index: 9999; opacity: 0; }
-    100% { opacity: 0; 
-           z-index: -9999; }
-}
-
-@keyframes loader-spinner {
- 
-    0%{
-        transform: rotate(0deg)
-        translateX(0px);
-    }
-   
-    80%{
-        transform: rotate(720deg) skewX(0deg);
-        ;
-    }
-    
-    
-    100%{
-        transform: translateX(140vh)
-        rotate(720deg)
-        skewX(50deg);
-    }
-
-
-}
-
-@keyframes loader__main-circle-reverse{
-    
-    0% { transform: scale(0) rotate(0deg); }
-    10%{ transform: scale(1) rotate(72deg);}
-    70% { transform: scale(1)  rotate(504deg);}
-    85% {
-        transform: scale(0) rotate(720deg); 
-    }
-    100% {
-        transform: scale(0) rotate(720deg);
-    }
-}
-
-
-@keyframes loader__main-circle{
-    
-    0% { transform: scale(0) rotate(720deg) }
-    10%{ transform: scale(1) rotate(504deg)}
-    70% { transform: scale(1)  rotate(72deg)}
-    85% {
-        transform: scale(0) rotate(0deg); 
-    }
-    100% {
-        transform: scale(0) rotate(0deg);
-    }
-}
-
-@keyframes loader__circles-color{
-    
-   0% {
-       opacity: 1;
-   }
-
-   33% {
-       opacity: 0;
-   }
-
-   66%{
-       opacity: 1;
-   }
-
-   99% {
-       opacity: 0;
-   }
-
-}
-
-
-.loader{
-    opacity: 1;
-    position: fixed;
-    animation: loader 4s linear forwards;
-    inset: 0px;
-    background-color: white;
-    display: grid;
-    place-items: center;
-    z-index: 9999;
-    
-
-    &::before{
-        animation: loader-spinner 3s cubic-bezier(.76,.19,.43,1.09) forwards;
-        content: "";
-        position: absolute;
-        width: 10%;
-        aspect-ratio: 1;
-        background: linear-gradient($clr-secondary, $clr-primary);
-    }
-
-    .circles {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        
-        border-radius: 50%;
-        background-color: transparent;
-        aspect-ratio: 1;
-        z-index:-1;
-    
-    }
-
-
-    .loader__circle-1::before, 
-    .loader__circle-1::after,
-    .loader__circle-2::before,
-    .loader__circle-2::after {
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            aspect-ratio: 1;
-    }   
-
-    &__circle-1 {
-        width: 30%;
-        animation: loader__main-circle 3s cubic-bezier(.86,.12,.2,.74) both;
-        
-        
-        &::before {
-            left: 0px;
-            width: 3vw;
-            background-color: $clr-tertiary;
-        }
-
-        &::after {
-            animation: loader__circles-color 3s linear both;
-            left: 0px;
-            width: 3vw;
-            background: linear-gradient($clr-primary, $clr-secondary);
-        }
-    }
-
-    &__circle-2 {
-        width: 40%;
-        background-color: blue;
-        animation: loader__main-circle-reverse 3s cubic-bezier(.86,.12,.2,.74) both; 
-
-        &::before {
-            
-            background-color: rgb(0, 255, 55);
-            right: 0px;
-            width: 4vw;
-            background-color: $clr-tertiary;
-        }
-
-        &::after {
-            animation: loader__circles-color 3s linear both reverse;
-            right: 0px;
-            width: 4vw;
-            background: linear-gradient($clr-primary, $clr-secondary);
-        }
-
-    }
-}
 
 header{
     
@@ -178,10 +16,18 @@ header{
   }
 }
 
+.full-container{
+    max-width: 1400px;
+    min-width: 315px;
+    padding: 0px 20px;
+    margin: 0px auto;
+    @media screen and (max-width: $tablet){
+        padding: 0px;
+    }
+}
+
 .main_container{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
+    @include display-flex ($flow: row wrap, $align: flex-end);
 }
 
 .explore{
@@ -190,11 +36,8 @@ header{
     padding: 0px 20px 50px 20px;
     flex: 1 1 400px;
 
-
     .location{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include display-flex ($justify: center, $align: center);
         background-color: $clr-location;
         padding: 5px 0px;
         margin: 0px -20px;
@@ -207,13 +50,10 @@ header{
         }
 
         form{
-            position: relative;
-           
-            
+            position: relative; 
         }
 
         input{
-            
             text-align: center;
             width: 140px;
             line-height: 30px;
@@ -221,14 +61,11 @@ header{
             border: 0px;
             border-radius: 5px;
             background-color: $clr-location;
-
         }
 
         input:focus{
             border: solid 2px darken($clr-location, 20%);
             outline: none;
-            
-            
         }
 
         ::placeholder{
@@ -260,7 +97,6 @@ header{
         position: relative;
         z-index: 1;
         
-
         &:hover{
             box-shadow: 0px 0px 10px darken($clr-box-shadow, 20%);
             &::before{
@@ -280,7 +116,6 @@ header{
             z-index: -1;
         }
 
-
         &--link{
             display: block;
             color: white;
@@ -297,8 +132,7 @@ header{
     margin: 0px 0px 0px 40px;
     @media screen and (max-width: $tablet){
         // Pour centrer la vignette en tenant compte du décalage avec le chiffre
-        margin: 0px 20px 0px calc(20px + 12.25px); 
-        
+        margin: 0px 20px 0px calc(20px + 12.25px);   
     }
 
     &__title{
@@ -317,7 +151,7 @@ header{
         padding: 25px 30px;
         border-radius: 20px;
         box-shadow: 0px 3px 6px  $clr-box-shadow;
-        @include flex-2axis-center;
+        @include display-flex ($justify: center, $align: center);
         transition: all 300ms ease-out;
         &.eat{
             background: $clr-functioning__element-eat;
@@ -336,7 +170,7 @@ header{
             color: white;
             font-weight: 400;
             font-size: 0.9rem;
-            @include flex-2axis-center;
+            @include display-flex ($justify: center, $align: center);
             position: absolute;
             left: calc(0px - 12.5px);
         }
@@ -364,8 +198,7 @@ header{
 
 .restroom__container{
     flex: 1 1 100%;
-    display: flex;
-    flex-wrap: wrap;
+    @include display-flex ($flow: row wrap);
     background: $clr-cards-bg;
     gap: 50px;
     padding: 50px; 
@@ -376,7 +209,6 @@ header{
         margin: calc(50px - 16px) 0px 0px 0px;
     }
     @media screen and (max-width: $mobile){
-        
         padding: 20px;
     }
 
@@ -387,9 +219,7 @@ header{
         @media screen and (max-width: $mobile){
             text-align: left;
             font-size: 1.5rem;
-
         }
-
     }
 
     .restroom__item{
@@ -404,24 +234,17 @@ header{
         transition: box-shadow 200ms ease-out;
         
         &:hover{
-            
             box-shadow: 0px 0px 20px $clr-box-shadow;
         }
 
         &:hover .item__picture{
             filter: brightness(1.1);
-        }
-
-       
-        
-
+        }  
     }
 
-    .item__link
-    {
+    .item__link{
         color: black;
         border-radius: 20px;
-       
     }
 
     .item__new-advert{
@@ -432,7 +255,6 @@ header{
         padding: 8px;
         border-radius: 3px;
         color: #009f88;
-
     }
 
     .item__picture{
@@ -440,31 +262,23 @@ header{
         max-height: 200px;
         object-fit: cover;
         transition: filter 200ms linear;
-     
-        
     }
 
     .item__info-container{
-        
         padding: 15px;
         position: relative;
         
-        .heart-icons__container {
+        .heart-icons__container{
             right: 20px;
         }
 
-        &--title {
+        &--title{
             margin: 0px 0px 6px 0px;
             font-weight: 900;
             font-size: 1.1rem;
         }
-        
-
-      
     }
-    
 }
-
 
 footer{
     color: white;
@@ -487,8 +301,7 @@ footer{
     }
 
     ul{
-        display: flex;
-        justify-content: space-around;
+        @include display-flex ($justify: space-around);
         @media screen and (max-width: $mobile){
         flex-direction: column;
         }

@@ -1,9 +1,59 @@
+
+
+// ANIMATIONS OUVERTURE PAGE
+
+@keyframes opacity{
+    0%{ 
+        opacity: 1; 
+     }
+
+    99.9%{ 
+        z-index: 10; 
+    }
+
+    100%{
+        opacity: 0;
+        z-index: -9999;
+    } 
+}
+
+@keyframes up-opacity{
+    from{ 
+        opacity: 0; 
+        transform: translateY(10px);
+     }
+
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    } 
+}
+
+.container-anim::before{ 
+    animation: opacity 1.6s linear forwards
+}
+.menu__footer-anim{ 
+    animation: opacity 1.6s linear forwards reverse 
+}
+.menu-anim, .menu__order-button{
+    animation: up-opacity 400ms ease-in-out backwards; 
+}
+
+// FAIT APPARAITRE LES ITEMS AVEC UN DELAI
+
+@for $i from 1 through 15 {
+    .menu-anim__anim-#{$i} {
+        animation-delay:  (($i * 100ms)+100ms);
+    }
+}
+
+/////////////////////
+
 .menu__body{
     max-width: 1000px;
 }
 
 .header-menu{
-    
     position: relative;
   
     &__icon--link{
@@ -24,64 +74,18 @@
 
 .restaurant__picture--container{
     margin: auto;
-    img {
+    img{
         width: 100%;
         max-height: 400px;
         object-fit: cover;
     }
 }
 
-// ANIMATIONS OUVERTURE PAGE
-
-@keyframes opacity {
-    0% { 
-        opacity: 1; 
-     }
-
-    99.9% { z-index: 10; }
-    100% {
-        opacity: 0;
-        z-index: -9999;
-    } 
-}
-
-@keyframes up-opacity {
-    from { 
-        opacity: 0; 
-        transform: translateY(10px);
-     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    } 
-}
-
-
-
-.container-anim::before{ animation: opacity 1.6s linear forwards}
-.menu__footer-anim { animation: opacity 1.6s linear forwards reverse }
-.menu-anim, .menu__order-button{
-    animation: up-opacity 400ms ease-in-out backwards; 
-
-}
-
-// FAIT APPARAITRE LES ITEMS AVEC UN DELAI
-
-@for $i from 1 through 15 {
-    .menu-anim__anim-#{$i} {
-        animation-delay:  (($i * 100ms)+100ms);
-    }
-}
-
-/////////////////////
-
 .menu{
     margin: 0px auto -50px;
     box-sizing: border-box;
     padding: 15px;
-    display: flex;
-    flex-direction: column;
+    @include display-flex ($flow: column);
     background: $clr-cards-bg;
     position: relative;
     border-radius: 50px 50px 0px 0px;
@@ -111,9 +115,7 @@
             font-size: 1.7rem;
             text-align: left;
         }
-
-    }
-   
+    }  
 }   
 
 .menu__order{
@@ -135,9 +137,7 @@
     }
 }
 
-
 .menu__item{
-    
     color: black;
     overflow: hidden;
     max-height: 73px;
@@ -155,14 +155,12 @@
     " desc price icon";
 
     &:hover .menu__item--icon-container{
-        
         width: 73px;
     }
 
     &:hover .menu__item--icon{
         transition: all 400ms ease-in-out;
         transform: rotate(360deg);
-        
     }
 
     &--name{
@@ -189,7 +187,7 @@
     }
     
     &--icon-container{
-        @include flex-2axis-center;
+        @include display-flex ($justify: center, $align: center);
         grid-area: icon;
         box-sizing: border-box;
         transition: all 400ms ease-in-out;
@@ -198,12 +196,8 @@
         background-color: $clr-tertiary;
         justify-self: flex-end;
         align-self: stretch;
-        width: 0px;
-        
-        
+        width: 0px;   
     }
-
-    
 
     &--icon{
         text-align: center;
@@ -240,7 +234,6 @@
         border-radius: 30px;
         inset: 0px;
         background: linear-gradient(90deg, #b579ff, #FF79DA);
-        z-index: -1;
         opacity: 0;
         transition: all 300ms ease-out;
         z-index: -1;

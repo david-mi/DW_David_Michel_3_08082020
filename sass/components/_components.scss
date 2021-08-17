@@ -1,6 +1,6 @@
 /////// ICONES COEURS /////////
  
-.heart-icons__container { 
+.heart-icons__container{ 
     position: absolute;
     top: 50%;
     height: 24px;
@@ -11,14 +11,13 @@
         transform: scale(1);
     }
 
-    &:hover .icon-empty {
+    &:hover .icon-empty{
         background: linear-gradient($clr-secondary, $clr-primary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
-    .heart-icon {
-
+    .heart-icon{
         color: transparent;
         position: absolute;
         inset: 0px;
@@ -28,10 +27,9 @@
       &:hover{
           cursor: pointer;
       }
-
     }
 
-    .icon-empty {
+    .icon-empty{
         transition: all 200ms linear;
         z-index: 10;
         background: black;
