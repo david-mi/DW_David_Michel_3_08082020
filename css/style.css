@@ -792,10 +792,11 @@ footer li a {
 }
 
 .menu__order--title {
-  font-weight: 500;
-  color: #7e7e7e;
+  font-weight: 400;
+  color: black;
   position: relative;
   padding-bottom: 6px;
+  text-transform: uppercase;
 }
 
 .menu__order--title::before {

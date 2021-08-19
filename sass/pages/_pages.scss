@@ -121,10 +121,11 @@
 .menu__order{
 
     &--title{
-        font-weight: 500;
-        color: $clr-grey-icon;
+        font-weight: 400;
+        color: black;
         position: relative;
         padding-bottom: 6px;
+        text-transform: uppercase;
         &::before{
             content: "";
             position: absolute;
