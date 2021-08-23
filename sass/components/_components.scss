@@ -14,7 +14,6 @@
     &:hover .icon-empty{
         @include bg-gradient-second-prim;
         -webkit-background-clip: text;
-        background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
@@ -35,7 +34,6 @@
         z-index: 10;
         background: black;
         -webkit-background-clip: text;
-        background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
@@ -44,7 +42,6 @@
         font-size: 1.5rem;
         @include bg-gradient-second-prim;
         -webkit-background-clip: text;
-        background-clip: text;
         -webkit-text-fill-color: transparent;
         transform-origin: bottom;
         transform: scale(0);

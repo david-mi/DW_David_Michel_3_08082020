@@ -93,7 +93,7 @@
   content: "";
   position: absolute;
   width: 10%;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   background: linear-gradient(#FF79DA, #9356DC);
 }
 
@@ -105,7 +105,7 @@
   position: absolute;
   border-radius: 50%;
   background-color: transparent;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   z-index: -1;
 }
 
@@ -116,7 +116,7 @@
   content: "";
   position: absolute;
   border-radius: 50%;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
 }
 
 .loader__circle-1 {
@@ -206,7 +206,6 @@ img {
 .heart-icons__container:hover .icon-empty {
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -227,7 +226,6 @@ img {
   z-index: 10;
   background: black;
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -236,7 +234,6 @@ img {
   font-size: 1.5rem;
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   transform-origin: bottom;
   transform: scale(0);
